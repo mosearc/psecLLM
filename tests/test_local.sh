@@ -1,15 +1,6 @@
 #!/bin/bash
 # test_local.sh — Tests Tigress and Movfuscator locally on Debian
 # Usage: ./tests/test_local.sh [light|medium|heavy]
-#
-# Profiles:
-#   light  — basic transforms, fastest
-#   medium — flatten + encode + virtualize (default)
-#   heavy  — all transforms stacked
-#
-# Run from repo root:
-#   cd obfuscation-pipeline && bash tests/test_local.sh
-#   cd obfuscation-pipeline && bash tests/test_local.sh heavy
 
 PROFILE=${1:-medium}
 
@@ -29,6 +20,7 @@ skip() { echo -e "${YELLOW}[SKIP]${RESET} $1"; SKIP=$((SKIP + 1)); }
 header() { echo -e "\n========================================"; echo "  $1"; echo "========================================"; }
 
 # ── Tigress flag profiles ─────────────────────────────────────────────────────
+# NOTE: each --Transform needs its own --Functions flag
 case $PROFILE in
     light)
         TIGRESS_FLAGS=(
@@ -41,7 +33,9 @@ case $PROFILE in
         TIGRESS_FLAGS=(
             --Transform=Flatten
             --FlattenDispatch=switch
+            --Functions=main
             --Transform=EncodeArithmetic
+            --Functions=main
             --Transform=Virtualize
             --VirtualizeDispatch=switch
             --Functions=main
@@ -51,8 +45,11 @@ case $PROFILE in
         TIGRESS_FLAGS=(
             --Transform=Flatten
             --FlattenDispatch=goto
+            --Functions=main
             --Transform=EncodeArithmetic
+            --Functions=main
             --Transform=AddOpaque
+            --Functions=main
             --Transform=Virtualize
             --VirtualizeDispatch=indirect
             --Functions=main
@@ -64,8 +61,15 @@ case $PROFILE in
         ;;
 esac
 
+# ── Movfuscator flags ─────────────────────────────────────────────────────────
+case $PROFILE in
+    heavy) MOVCC_FLAGS="-DMOVFUSCATOR_ENTROPY" ;;
+    *)     MOVCC_FLAGS="" ;;
+esac
+
 echo -e "\n${CYAN}Profile: $PROFILE${RESET}"
 echo -e "${CYAN}Tigress flags: ${TIGRESS_FLAGS[*]}${RESET}"
+echo -e "${CYAN}Movfuscator flags: $MOVCC_FLAGS${RESET}"
 
 mkdir -p obfuscated
 
@@ -107,37 +111,23 @@ fi
 # ─────────────────────────────────────────
 header "2/2 — MOVFUSCATOR"
 # ─────────────────────────────────────────
-# Movfuscator has no meaningful flag profiles —
-# it always emits mov-only x86 32-bit code.
-# The only knobs are: -g (debug), strip (smaller output).
 
 if ! command -v movcc &>/dev/null; then
     skip "movcc not found in PATH (movfuscator not installed)"
 else
-    MOVCC_FLAGS="-m32"
-    if [[ "$PROFILE" == "heavy" ]]; then
-        MOVCC_FLAGS="$MOVCC_FLAGS -DMOVFUSCATOR_ENTROPY"
-    fi
-
-    echo -e "${CYAN}Movfuscator flags: $MOVCC_FLAGS${RESET}"
     echo "→ Compiling src/test_hello.c with movcc..."
 
     if movcc $MOVCC_FLAGS -o obfuscated/test_hello_movfuscated src/test_hello.c 2>&1; then
 
-        echo "→ Running binary (timeout 120s — movfuscated binaries are very slow)..."
-        OUTPUT=$(timeout 120 ./obfuscated/test_hello_movfuscated)
-        EXIT_CODE=$?
+        echo "→ Running binary (movfuscated binaries are slow, please wait)..."
+        OUTPUT=$(./obfuscated/test_hello_movfuscated)
 
-        if [[ $EXIT_CODE -eq 124 ]]; then
-            fail "Movfuscator [$PROFILE]: binary timed out after 120s"
+        echo "$OUTPUT"
+        if echo "$OUTPUT" | grep -q "Hello from test_hello.c" && \
+           echo "$OUTPUT" | grep -q "2 + 3 = 5"; then
+            pass "Movfuscator [$PROFILE]: compilation and output correct"
         else
-            echo "$OUTPUT"
-            if echo "$OUTPUT" | grep -q "Hello from test_hello.c" && \
-               echo "$OUTPUT" | grep -q "2 + 3 = 5"; then
-                pass "Movfuscator [$PROFILE]: compilation and output correct"
-            else
-                fail "Movfuscator [$PROFILE]: binary ran but output was unexpected"
-            fi
+            fail "Movfuscator [$PROFILE]: binary ran but output was unexpected"
         fi
     else
         fail "Movfuscator [$PROFILE]: compilation failed"

@@ -1,19 +1,6 @@
 #!/bin/bash
 # obfuscate_all.sh — Full obfuscation pipeline
-#
 # Usage: ./obfuscate_all.sh <source_file> [light|medium|heavy]
-#
-# Profiles:
-#   light  — fastest, basic transforms
-#   medium — balanced (default)
-#   heavy  — maximum obfuscation, slow compile
-#
-# - C files  → Tigress (local) + Movfuscator (local)
-# - C++ files → pushed to GitHub → Obfusk8 via GitHub Actions (windows-latest)
-#
-# Requirements:
-#   - tigress and movcc in PATH (for C files)
-#   - gh CLI authenticated: gh auth login
 
 set -e
 
@@ -52,6 +39,7 @@ ok()   { echo -e "  ${GREEN}✓${RESET} $1"; }
 warn() { echo -e "  ${YELLOW}⚠${RESET} $1"; }
 
 # ── Tigress flag profiles ─────────────────────────────────────────────────────
+# NOTE: each --Transform needs its own --Functions flag
 case $PROFILE in
     light)
         TIGRESS_FLAGS=(
@@ -64,7 +52,9 @@ case $PROFILE in
         TIGRESS_FLAGS=(
             --Transform=Flatten
             --FlattenDispatch=switch
+            --Functions=main
             --Transform=EncodeArithmetic
+            --Functions=main
             --Transform=Virtualize
             --VirtualizeDispatch=switch
             --Functions=main
@@ -74,13 +64,22 @@ case $PROFILE in
         TIGRESS_FLAGS=(
             --Transform=Flatten
             --FlattenDispatch=goto
+            --Functions=main
             --Transform=EncodeArithmetic
+            --Functions=main
             --Transform=AddOpaque
+            --Functions=main
             --Transform=Virtualize
             --VirtualizeDispatch=indirect
             --Functions=main
         )
         ;;
+esac
+
+# ── Movfuscator flags ─────────────────────────────────────────────────────────
+case $PROFILE in
+    heavy) MOVCC_FLAGS="-DMOVFUSCATOR_ENTROPY" ;;
+    *)     MOVCC_FLAGS="" ;;
 esac
 
 echo ""
@@ -119,10 +118,6 @@ if [[ "$EXT" != "c" ]]; then
 elif ! command -v movcc &>/dev/null; then
     warn "Skipped — movcc not found in PATH"
 else
-    MOVCC_FLAGS="-m32"
-    if [[ "$PROFILE" == "heavy" ]]; then
-        MOVCC_FLAGS="$MOVCC_FLAGS -DMOVFUSCATOR_ENTROPY"
-    fi
     echo -e "  flags: ${CYAN}$MOVCC_FLAGS${RESET}"
     movcc $MOVCC_FLAGS -o "${REPO_ROOT}/obfuscated/${NAME}_movfuscated" "$SOURCE"
     ok "obfuscated/${NAME}_movfuscated  (ELF)"

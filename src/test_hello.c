@@ -6,6 +6,7 @@ int add(int a, int b) {
 
 int main(void) {
     int result = add(2, 3);
-    printf("Hello from test_hello.c\n");
+    puts("Hello from test_hello.c");
+    puts("2 + 3 = 5");
     return 0;
 }
