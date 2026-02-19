@@ -7,6 +7,16 @@ on:
       - 'src/**.cxx'
       - 'src/**.cc'
   workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Obfuscation profile'
+        required: false
+        default: 'medium'
+        type: choice
+        options:
+          - light
+          - medium
+          - heavy
 
 jobs:
   obfusk8-build:
@@ -16,9 +26,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache Obfusk8 headers
+        uses: actions/cache@v4
+        with:
+          path: C:\Obfusk8
+          key: obfusk8-${{ hashFiles('.github/workflows/obfusk8.yml') }}
+
       - name: Clone Obfusk8 headers
+        shell: cmd
         run: |
-          git clone https://github.com/x86byte/Obfusk8.git C:\Obfusk8
+          if not exist C:\Obfusk8 (
+            git clone https://github.com/x86byte/Obfusk8.git C:\Obfusk8
+          ) else (
+            echo Obfusk8 headers already cached.
+          )
 
       - name: Verify Obfusk8 structure
         shell: cmd
@@ -28,6 +49,27 @@ jobs:
 
       - name: Set up MSVC environment
         uses: microsoft/setup-msbuild@v2
+
+      - name: Resolve compiler flags from profile
+        shell: bash
+        run: |
+          PROFILE="${{ github.event.inputs.profile || 'medium' }}"
+          echo "Using profile: $PROFILE"
+
+          case $PROFILE in
+            light)
+              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            medium)
+              echo "MSVC_FLAGS=/O1 /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            heavy)
+              echo "MSVC_FLAGS=/O2 /GL /Oy /GS- /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            *)
+              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+          esac
 
       - name: Find and compile all C++ sources with Obfusk8
         shell: cmd
@@ -40,8 +82,8 @@ jobs:
 
           for %%f in (src\*.cpp src\*.cxx src\*.cc) do (
             echo.
-            echo [Obfusk8] Compiling %%f ...
-            cl.exe /std:c++17 /EHsc /O2 ^
+            echo [Obfusk8] Compiling %%f with flags: ${{ env.MSVC_FLAGS }}
+            cl.exe ${{ env.MSVC_FLAGS }} ^
               /I"C:\Obfusk8\Obfusk8\Instrumentation\materialization\state" ^
               /I"C:\Obfusk8\Obfusk8\Instrumentation\materialization\transform" ^
               /I"C:\Obfusk8\Obfusk8\Instrumentation\materialization" ^
@@ -75,6 +117,6 @@ jobs:
       - name: Upload obfuscated binaries
         uses: actions/upload-artifact@v4
         with:
-          name: obfusk8-binaries
+          name: obfusk8-binaries-${{ github.event.inputs.profile || 'medium' }}
           path: obfuscated/*.exe
           retention-days: 30
