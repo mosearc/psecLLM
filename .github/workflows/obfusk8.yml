@@ -1,0 +1,52 @@
+name: Obfusk8 Pipeline
+
+on:
+  push:
+    paths:
+      - 'src/**.cpp'
+      - 'src/**.cxx'
+      - 'src/**.cc'
+  workflow_dispatch:   # allows manual trigger from GitHub UI
+
+jobs:
+  obfusk8-build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clone Obfusk8 headers
+        run: |
+          git clone https://github.com/x86byte/Obfusk8.git C:\Obfusk8
+
+      - name: Set up MSVC environment
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Find and compile all C++ sources with Obfusk8
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          
+          if not exist obfuscated mkdir obfuscated
+          
+          for %%f in (src\*.cpp src\*.cxx src\*.cc) do (
+            echo Compiling %%f with Obfusk8...
+            cl.exe /std:c++17 /EHsc /O2 ^
+              /I"C:\Obfusk8\Obfusk8\Instrumentation\materialization\state" ^
+              "%%f" ^
+              /Fe:"obfuscated\%%~nf_obfusk8.exe"
+            
+            if errorlevel 1 (
+              echo ERROR: Failed to compile %%f
+              exit /b 1
+            )
+            echo Done: obfuscated\%%~nf_obfusk8.exe
+          )
+
+      - name: Upload obfuscated binaries as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: obfusk8-binaries
+          path: obfuscated/*.exe
+          retention-days: 30
