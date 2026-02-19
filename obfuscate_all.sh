@@ -6,6 +6,10 @@ set -e
 
 SOURCE="$1"
 PROFILE="${2:-medium}"
+LOCAL_ONLY=0
+for arg in "$@"; do
+    [[ "$arg" == "--local-only" ]] && LOCAL_ONLY=1
+done
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 if [[ -z "$SOURCE" ]]; then
@@ -174,6 +178,8 @@ echo ""
 echo "[4/5] Kovid (LLVM passes)"
 if [[ "$EXT" != "c" && "$EXT" != "cpp" && "$EXT" != "cxx" && "$EXT" != "cc" ]]; then
     warn "Skipped — C/C++ files only"
+elif grep -q "Obfusk8" "$SOURCE" 2>/dev/null; then
+    warn "Skipped — file includes Obfusk8 headers (Windows/MSVC only, incompatible with clang-19)"
 elif ! command -v clang-19 &>/dev/null; then
     warn "Skipped — clang-19 not found"
 elif [[ ! -f "${KOVID_LIB}/libKoviDRenameCodeLLVMPlugin.so" ]]; then
@@ -210,7 +216,9 @@ fi
 # ── 5. OBFUSK8 (GitHub Actions) ───────────
 echo ""
 echo "[5/5] Obfusk8 (GitHub Actions — profile: $PROFILE)"
-if [[ "$EXT" != "cpp" && "$EXT" != "cxx" && "$EXT" != "cc" ]]; then
+if [[ "$LOCAL_ONLY" -eq 1 ]]; then
+    warn "Skipped — local-only mode (push trigger will fire Obfusk8 automatically)"
+elif [[ "$EXT" != "cpp" && "$EXT" != "cxx" && "$EXT" != "cc" ]]; then
     warn "Skipped — C++ files only"
 elif ! command -v gh &>/dev/null; then
     warn "Skipped — gh CLI not installed (sudo apt install gh)"
