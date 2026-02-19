@@ -55,20 +55,11 @@ jobs:
         run: |
           PROFILE="${{ github.event.inputs.profile || 'medium' }}"
           echo "Using profile: $PROFILE"
-
           case $PROFILE in
-            light)
-              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
-              ;;
-            medium)
-              echo "MSVC_FLAGS=/O1 /EHsc /std:c++17" >> $GITHUB_ENV
-              ;;
-            heavy)
-              echo "MSVC_FLAGS=/O2 /GL /Oy /GS- /EHsc /std:c++17" >> $GITHUB_ENV
-              ;;
-            *)
-              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
-              ;;
+            light)  echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV ;;
+            medium) echo "MSVC_FLAGS=/O1 /EHsc /std:c++17" >> $GITHUB_ENV ;;
+            heavy)  echo "MSVC_FLAGS=/O2 /GL /Oy /GS- /EHsc /std:c++17" >> $GITHUB_ENV ;;
+            *)      echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV ;;
           esac
 
       - name: Find and compile all C++ sources with Obfusk8
@@ -103,16 +94,23 @@ jobs:
       - name: Run obfuscated binaries (smoke test)
         shell: cmd
         run: |
+          setlocal enabledelayedexpansion
+          set FAILED=0
+
           for %%f in (obfuscated\*.exe) do (
             echo.
             echo [RUN] %%f
             "%%f"
-            if errorlevel 1 (
-              echo [FAIL] %%f exited with error
-              exit /b 1
+            set EXIT=!ERRORLEVEL!
+            if !EXIT! NEQ 0 (
+              echo [FAIL] %%f exited with code !EXIT!
+              set FAILED=1
+            ) else (
+              echo [OK] %%f
             )
-            echo [OK] %%f
           )
+
+          if !FAILED! EQU 1 exit /b 1
 
       - name: Upload obfuscated binaries
         uses: actions/upload-artifact@v4
