@@ -7,6 +7,5 @@ int add(int a, int b) {
 int main(void) {
     int result = add(2, 3);
     printf("Hello from test_hello.c\n");
-    printf("2 + 3 = %d\n", result);
     return 0;
 }
