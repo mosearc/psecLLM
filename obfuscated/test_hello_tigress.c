@@ -510,11 +510,11 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "main" ],
         "New Global Variables": {
-          "_TIG_VZ_zj1M_3_main_$array": "INIT_FUN: '_TIG_VZ_zj1M_3_main_$array__INIT'",
-          "_TIG_VZ_zj1M_3_main_$strings": "INIT_FUN: '_TIG_VZ_zj1M_3_main_$strings__INIT'"
+          "_TIG_VZ_S5lt_3_main_$array": "INIT_FUN: '_TIG_VZ_S5lt_3_main_$array__INIT'",
+          "_TIG_VZ_S5lt_3_main_$strings": "INIT_FUN: '_TIG_VZ_S5lt_3_main_$strings__INIT'"
         },
         "New Types": [
-          "_TIG_VZ_zj1M_3_main_$op", "_TIG_VZ_zj1M_3_main_$node"
+          "_TIG_VZ_S5lt_3_main_$op", "_TIG_VZ_S5lt_3_main_$node"
         ]
       }
     },
@@ -538,9 +538,9 @@ BEGIN-UNIVERSE
       "TransformationUpdates": {
         "Modified Function Implementations": [ "main" ],
         "New Global Variables": {
-          "_TIG_IZ_zj1M_envp": "INIT_FUN: '_TIG_IZ_zj1M_envp__INIT'",
-          "_TIG_IZ_zj1M_argv": "INIT_FUN: '_TIG_IZ_zj1M_argv__INIT'",
-          "_TIG_IZ_zj1M_argc": "INIT_FUN: '_TIG_IZ_zj1M_argc__INIT'"
+          "_TIG_IZ_S5lt_envp": "INIT_FUN: '_TIG_IZ_S5lt_envp__INIT'",
+          "_TIG_IZ_S5lt_argv": "INIT_FUN: '_TIG_IZ_S5lt_argv__INIT'",
+          "_TIG_IZ_S5lt_argc": "INIT_FUN: '_TIG_IZ_S5lt_argc__INIT'"
         }
       }
     },
@@ -1031,6 +1031,10 @@ typedef long __blksize_t;
 extern int getchar_unlocked(void) ;
 /* END FUNCTION-DECL-EXTERN getchar_unlocked LOC=/usr/include/stdio.h:528 VKEY=1208 */
 
+/* BEGIN VARIABLE-DEF _TIG_IZ_S5lt_envp LOC=UNKNOWN VKEY=1432 */
+char **_TIG_IZ_S5lt_envp  ;
+/* END VARIABLE-DEF _TIG_IZ_S5lt_envp LOC=UNKNOWN VKEY=1432 */
+
 /* BEGIN FUNCTION-DECL-EXTERN tempnam LOC=/usr/include/stdio.h:222 VKEY=1010 */
 #line 222
 extern  __attribute__((__nothrow__)) char *( __attribute__((__leaf__)) tempnam)(char const   *__dir ,
@@ -1057,6 +1061,26 @@ typedef long __suseconds64_t;
 #line 55 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef __uint16_t __uint_least16_t;
 /* END TYPEDEF __uint_least16_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:55 */
+
+/* BEGIN UNION _TIG_VZ_S5lt_3_main_$node LOC=UNKNOWN CKEY=20 */
+union _TIG_VZ_S5lt_3_main_$node {
+   short _short ;
+   float _float ;
+   signed char _signed_char ;
+   char *_char_star ;
+   double _double ;
+   unsigned long _unsigned_long ;
+   char _char ;
+   unsigned char _unsigned_char ;
+   unsigned short _unsigned_short ;
+   long long _long_long ;
+   long double _long_double ;
+   int _int ;
+   long _long ;
+   unsigned long long _unsigned_long_long ;
+   unsigned int _unsigned_int ;
+};
+/* END UNION _TIG_VZ_S5lt_3_main_$node LOC=UNKNOWN CKEY=20 */
 
 /* BEGIN FUNCTION-DECL-EXTERN fsetpos LOC=/usr/include/stdio.h:765 VKEY=1359 */
 #line 765 "/usr/include/stdio.h"
@@ -1088,10 +1112,6 @@ extern  __attribute__((__nothrow__)) int ( __attribute__((__leaf__)) feof)(FILE 
 #line 573
 extern int putc_unlocked(int __c , FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN putc_unlocked LOC=/usr/include/stdio.h:573 VKEY=1234 */
-
-/* BEGIN UNION-DECL _TIG_VZ_zj1M_3_main_$node LOC=UNKNOWN CKEY=20 */
-union _TIG_VZ_zj1M_3_main_$node ;
-/* END UNION-DECL _TIG_VZ_zj1M_3_main_$node LOC=UNKNOWN CKEY=20 */
 
 /* BEGIN TYPEDEF __ino_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:148 */
 #line 148 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1133,14 +1153,18 @@ extern  __attribute__((__nothrow__)) int ( __attribute__((__leaf__)) feof_unlock
 struct _G_fpos64_t ;
 /* END STRUCT-DECL _G_fpos64_t LOC=/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:10 13 */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_zj1M_argc LOC=UNKNOWN VKEY=1428 */
-int _TIG_IZ_zj1M_argc  ;
-/* END VARIABLE-DEF _TIG_IZ_zj1M_argc LOC=UNKNOWN VKEY=1428 */
+/* BEGIN VARIABLE-DECL _TIG_IZ_S5lt_argv LOC=UNKNOWN VKEY=1430 */
+char **_TIG_IZ_S5lt_argv ;
+/* END VARIABLE-DECL _TIG_IZ_S5lt_argv LOC=UNKNOWN VKEY=1430 */
 
 /* BEGIN TYPEDEF __uint_least8_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:53 */
 #line 53 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef __uint8_t __uint_least8_t;
 /* END TYPEDEF __uint_least8_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:53 */
+
+/* BEGIN VARIABLE-DECL _TIG_IZ_S5lt_envp LOC=UNKNOWN VKEY=1432 */
+char **_TIG_IZ_S5lt_envp ;
+/* END VARIABLE-DECL _TIG_IZ_S5lt_envp LOC=UNKNOWN VKEY=1432 */
 
 /* BEGIN TYPEDEF __uintmax_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:73 */
 #line 73 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1172,6 +1196,10 @@ extern  __attribute__((__nothrow__)) int ( /* format attribute */  snprintf)(cha
                                                                              , ...) ;
 /* END FUNCTION-DECL-EXTERN snprintf LOC=/usr/include/stdio.h:378 VKEY=1108 */
 
+/* BEGIN VARIABLE-DECL _TIG_IZ_S5lt_argc LOC=UNKNOWN VKEY=1428 */
+int _TIG_IZ_S5lt_argc ;
+/* END VARIABLE-DECL _TIG_IZ_S5lt_argc LOC=UNKNOWN VKEY=1428 */
+
 /* BEGIN TYPEDEF __u_short LOC=/usr/include/x86_64-linux-gnu/bits/types.h:32 */
 #line 32 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned short __u_short;
@@ -1202,10 +1230,18 @@ extern int printf(char const   * __restrict  __format  , ...) ;
 struct __anonstruct___fsid_t_109580352 ;
 /* END STRUCT-DECL __anonstruct___fsid_t_109580352 LOC=/usr/include/x86_64-linux-gnu/bits/types.h:155 9 */
 
+/* BEGIN VARIABLE-DEF _TIG_IZ_S5lt_argv LOC=UNKNOWN VKEY=1430 */
+char **_TIG_IZ_S5lt_argv  ;
+/* END VARIABLE-DEF _TIG_IZ_S5lt_argv LOC=UNKNOWN VKEY=1430 */
+
 /* BEGIN VARIABLE-DECL-EXTERN stderr LOC=/usr/include/stdio.h:145 VKEY=976 */
 #line 145 "/usr/include/stdio.h"
 extern FILE *stderr ;
 /* END VARIABLE-DECL-EXTERN stderr LOC=/usr/include/stdio.h:145 VKEY=976 */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_S5lt_3_main_$strings LOC=UNKNOWN VKEY=1475 */
+char const   *_TIG_VZ_S5lt_3_main_$strings ;
+/* END VARIABLE-DECL _TIG_VZ_S5lt_3_main_$strings LOC=UNKNOWN VKEY=1475 */
 
 /* BEGIN TYPEDEF __uint_least32_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:57 */
 #line 57 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1221,6 +1257,10 @@ typedef int __key_t;
 #line 556 "/usr/include/stdio.h"
 extern int putchar(int __c ) ;
 /* END FUNCTION-DECL-EXTERN putchar LOC=/usr/include/stdio.h:556 VKEY=1224 */
+
+/* BEGIN ENUM-DECL _TIG_VZ_S5lt_3_main_$op LOC=UNKNOWN */
+enum _TIG_VZ_S5lt_3_main_$op ;
+/* END ENUM-DECL _TIG_VZ_S5lt_3_main_$op LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF __syscall_slong_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:197 */
 #line 197 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1262,6 +1302,10 @@ extern int fseeko(FILE *__stream , __off_t __off , int __whence ) ;
 #line 513
 extern int fgetc(FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN fgetc LOC=/usr/include/stdio.h:513 VKEY=1196 */
+
+/* BEGIN VARIABLE-DECL _TIG_VZ_S5lt_3_main_$array LOC=UNKNOWN VKEY=1481 */
+unsigned char _TIG_VZ_S5lt_3_main_$array[1][247] ;
+/* END VARIABLE-DECL _TIG_VZ_S5lt_3_main_$array LOC=UNKNOWN VKEY=1481 */
 
 /* BEGIN FUNCTION-DECL add LOC=UNKNOWN VKEY=1415 */
 int add(int a , int b ) ;
@@ -1328,10 +1372,6 @@ extern FILE *freopen(char const   * __restrict  __filename , char const   * __re
                      FILE * __restrict  __stream ) ;
 /* END FUNCTION-DECL-EXTERN freopen LOC=/usr/include/stdio.h:265 VKEY=1028 */
 
-/* BEGIN VARIABLE-DECL _TIG_VZ_zj1M_3_main_$strings LOC=UNKNOWN VKEY=1475 */
-char const   *_TIG_VZ_zj1M_3_main_$strings ;
-/* END VARIABLE-DECL _TIG_VZ_zj1M_3_main_$strings LOC=UNKNOWN VKEY=1475 */
-
 /* BEGIN STRUCT _G_fpos64_t LOC=/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:10 13 */
 #line 10 "/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h"
 struct _G_fpos64_t {
@@ -1364,10 +1404,6 @@ extern void rewind(FILE *__stream ) ;
 #line 668
 extern int ungetc(int __c , FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN ungetc LOC=/usr/include/stdio.h:668 VKEY=1290 */
-
-/* BEGIN ENUM-DECL _TIG_VZ_zj1M_3_main_$op LOC=UNKNOWN */
-enum _TIG_VZ_zj1M_3_main_$op ;
-/* END ENUM-DECL _TIG_VZ_zj1M_3_main_$op LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF __syscall_ulong_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:199 */
 #line 199 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1402,10 +1438,6 @@ typedef unsigned long __rlim_t;
 extern  __attribute__((__nothrow__)) void ( __attribute__((__leaf__)) funlockfile)(FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN funlockfile LOC=/usr/include/stdio.h:874 VKEY=1406 */
 
-/* BEGIN VARIABLE-DECL _TIG_VZ_zj1M_3_main_$array LOC=UNKNOWN VKEY=1481 */
-unsigned char _TIG_VZ_zj1M_3_main_$array[1][247] ;
-/* END VARIABLE-DECL _TIG_VZ_zj1M_3_main_$array LOC=UNKNOWN VKEY=1481 */
-
 /* BEGIN TYPEDEF va_list LOC=/usr/include/stdio.h:52 */
 #line 52 "/usr/include/stdio.h"
 typedef __gnuc_va_list va_list;
@@ -1436,26 +1468,6 @@ extern  __attribute__((__nothrow__)) int ( __attribute__((__leaf__)) ferror)(FIL
 #line 549
 extern int fputc(int __c , FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN fputc LOC=/usr/include/stdio.h:549 VKEY=1216 */
-
-/* BEGIN ENUM _TIG_VZ_zj1M_3_main_$op LOC=UNKNOWN */
-enum _TIG_VZ_zj1M_3_main_$op {
-    _TIG_VZ_zj1M_3_main_goto$label_LAB_0 = 40,
-    _TIG_VZ_zj1M_3_main_return_int$expr_STA_0 = 254,
-    _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1 = 153,
-    _TIG_VZ_zj1M_3_main_load_int$left_STA_0$result_STA_0 = 69,
-    _TIG_VZ_zj1M_3_main_load_unsigned_long$left_STA_0$result_STA_0 = 83,
-    _TIG_VZ_zj1M_3_main_convert_char_star2char_star$left_STA_0$result_STA_0 = 225,
-    _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0 = 74,
-    _TIG_VZ_zj1M_3_main_constant_unsigned_long$result_STA_0$value_LIT_0 = 85,
-    _TIG_VZ_zj1M_3_main_store_unsigned_long$left_STA_0$right_STA_1 = 184,
-    _TIG_VZ_zj1M_3_main_string$result_STA_0$value_LIT_0 = 17,
-    _TIG_VZ_zj1M_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0 = 70,
-    _TIG_VZ_zj1M_3_main_call$func_LIT_0 = 8,
-    _TIG_VZ_zj1M_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3 = 121,
-    _TIG_VZ_zj1M_3_main_constant_int$result_STA_0$value_LIT_0 = 187,
-    _TIG_VZ_zj1M_3_main_store_char_star$right_STA_0$left_STA_1 = 49
-} ;
-/* END ENUM _TIG_VZ_zj1M_3_main_$op LOC=UNKNOWN */
 
 /* BEGIN TYPEDEF __uint_least64_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:59 */
 #line 59 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1495,19 +1507,11 @@ extern  __attribute__((__nothrow__)) void ( __attribute__((__leaf__)) clearerr)(
 extern  __attribute__((__nothrow__)) char *( __attribute__((__leaf__)) ctermid)(char *__s )  __attribute__((__access__(__write_only__,1))) ;
 /* END FUNCTION-DECL-EXTERN ctermid LOC=/usr/include/stdio.h:837 VKEY=1397 */
 
-/* BEGIN VARIABLE-DEF _TIG_VZ_zj1M_3_main_$strings LOC=UNKNOWN VKEY=1475 */
-char const   *_TIG_VZ_zj1M_3_main_$strings  ;
-/* END VARIABLE-DEF _TIG_VZ_zj1M_3_main_$strings LOC=UNKNOWN VKEY=1475 */
-
 /* BEGIN FUNCTION-DECL-EXTERN vdprintf LOC=/usr/include/stdio.h:403 VKEY=1124 */
 #line 403
 extern int ( /* format attribute */  vdprintf)(int __fd , char const   * __restrict  __fmt ,
                                                __gnuc_va_list __arg ) ;
 /* END FUNCTION-DECL-EXTERN vdprintf LOC=/usr/include/stdio.h:403 VKEY=1124 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_zj1M_envp LOC=UNKNOWN VKEY=1432 */
-char **_TIG_IZ_zj1M_envp ;
-/* END VARIABLE-DECL _TIG_IZ_zj1M_envp LOC=UNKNOWN VKEY=1432 */
 
 /* BEGIN TYPEDEF __ino64_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:149 */
 #line 149 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1538,10 +1542,6 @@ extern  __attribute__((__nothrow__)) void ( __attribute__((__leaf__)) setbuffer)
                                                                                  size_t __size ) ;
 /* END FUNCTION-DECL-EXTERN setbuffer LOC=/usr/include/stdio.h:338 VKEY=1066 */
 
-/* BEGIN VARIABLE-DEF _TIG_IZ_zj1M_argv LOC=UNKNOWN VKEY=1430 */
-char **_TIG_IZ_zj1M_argv  ;
-/* END VARIABLE-DEF _TIG_IZ_zj1M_argv LOC=UNKNOWN VKEY=1430 */
-
 /* BEGIN TYPEDEF __FILE LOC=/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:5 */
 #line 5 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h"
 typedef struct _IO_FILE __FILE;
@@ -1563,6 +1563,14 @@ extern int fscanf(FILE * __restrict  __stream , char const   * __restrict  __for
                   , ...)  __asm__("__isoc99_fscanf")  ;
 /* END FUNCTION-DECL-EXTERN fscanf LOC=/usr/include/stdio.h:415 VKEY=1134 */
 
+/* BEGIN UNION-DECL _TIG_VZ_S5lt_3_main_$node LOC=UNKNOWN CKEY=20 */
+union _TIG_VZ_S5lt_3_main_$node ;
+/* END UNION-DECL _TIG_VZ_S5lt_3_main_$node LOC=UNKNOWN CKEY=20 */
+
+/* BEGIN VARIABLE-DEF _TIG_IZ_S5lt_argc LOC=UNKNOWN VKEY=1428 */
+int _TIG_IZ_S5lt_argc  ;
+/* END VARIABLE-DEF _TIG_IZ_S5lt_argc LOC=UNKNOWN VKEY=1428 */
+
 /* BEGIN TYPEDEF __sig_atomic_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:215 */
 #line 215 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __sig_atomic_t;
@@ -1572,10 +1580,6 @@ typedef int __sig_atomic_t;
 #line 371 "/usr/include/stdio.h"
 extern int vprintf(char const   * __restrict  __format , __gnuc_va_list __arg ) ;
 /* END FUNCTION-DECL-EXTERN vprintf LOC=/usr/include/stdio.h:371 VKEY=1094 */
-
-/* BEGIN VARIABLE-DECL _TIG_IZ_zj1M_argc LOC=UNKNOWN VKEY=1428 */
-int _TIG_IZ_zj1M_argc ;
-/* END VARIABLE-DECL _TIG_IZ_zj1M_argc LOC=UNKNOWN VKEY=1428 */
 
 /* BEGIN FUNCTION-DECL-EXTERN fgetpos LOC=/usr/include/stdio.h:760 VKEY=1354 */
 #line 760
@@ -1658,10 +1662,6 @@ struct _IO_marker ;
 #line 146 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef unsigned int __uid_t;
 /* END TYPEDEF __uid_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:146 */
-
-/* BEGIN VARIABLE-DEF _TIG_VZ_zj1M_3_main_$array LOC=UNKNOWN VKEY=1481 */
-unsigned char _TIG_VZ_zj1M_3_main_$array[1][247]  ;
-/* END VARIABLE-DEF _TIG_VZ_zj1M_3_main_$array LOC=UNKNOWN VKEY=1481 */
 
 /* BEGIN STRUCT-DECL _G_fpos_t LOC=/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:10 12 */
 #line 10 "/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h"
@@ -1826,13 +1826,9 @@ __malloc__)) ;
 extern int fflush_unlocked(FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN fflush_unlocked LOC=/usr/include/stdio.h:239 VKEY=1016 */
 
-/* BEGIN VARIABLE-DECL _TIG_IZ_zj1M_argv LOC=UNKNOWN VKEY=1430 */
-char **_TIG_IZ_zj1M_argv ;
-/* END VARIABLE-DECL _TIG_IZ_zj1M_argv LOC=UNKNOWN VKEY=1430 */
-
-/* BEGIN VARIABLE-DEF _TIG_IZ_zj1M_envp LOC=UNKNOWN VKEY=1432 */
-char **_TIG_IZ_zj1M_envp  ;
-/* END VARIABLE-DEF _TIG_IZ_zj1M_envp LOC=UNKNOWN VKEY=1432 */
+/* BEGIN VARIABLE-DEF _TIG_VZ_S5lt_3_main_$array LOC=UNKNOWN VKEY=1481 */
+unsigned char _TIG_VZ_S5lt_3_main_$array[1][247]  ;
+/* END VARIABLE-DEF _TIG_VZ_S5lt_3_main_$array LOC=UNKNOWN VKEY=1481 */
 
 /* BEGIN FUNCTION-DECL-EXTERN ferror_unlocked LOC=/usr/include/stdio.h:796 VKEY=1377 */
 #line 796
@@ -1851,6 +1847,10 @@ extern __ssize_t getdelim(char ** __restrict  __lineptr , size_t * __restrict  _
                           int __delimiter , FILE * __restrict  __stream ) ;
 /* END FUNCTION-DECL-EXTERN getdelim LOC=/usr/include/stdio.h:635 VKEY=1270 */
 
+/* BEGIN VARIABLE-DEF _TIG_VZ_S5lt_3_main_$strings LOC=UNKNOWN VKEY=1475 */
+char const   *_TIG_VZ_S5lt_3_main_$strings  ;
+/* END VARIABLE-DEF _TIG_VZ_S5lt_3_main_$strings LOC=UNKNOWN VKEY=1475 */
+
 /* BEGIN TYPEDEF __clockid_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:169 */
 #line 169 "/usr/include/x86_64-linux-gnu/bits/types.h"
 typedef int __clockid_t;
@@ -1868,7 +1868,7 @@ extern  __attribute__((__nothrow__)) int sprintf(char * __restrict  __s , char c
 /* END FUNCTION-DECL-EXTERN sprintf LOC=/usr/include/stdio.h:358 VKEY=1082 */
 
 /* BEGIN FUNCTION-DECL main LOC=UNKNOWN VKEY=1454 */
-int main(int _TIG_IZ_zj1M_formal_argc , char **_TIG_IZ_zj1M_formal_argv , char **_TIG_IZ_zj1M_formal_envp ) ;
+int main(int _TIG_IZ_S5lt_formal_argc , char **_TIG_IZ_S5lt_formal_argv , char **_TIG_IZ_S5lt_formal_envp ) ;
 /* END FUNCTION-DECL main LOC=UNKNOWN VKEY=1454 */
 
 /* BEGIN TYPEDEF __u_char LOC=/usr/include/x86_64-linux-gnu/bits/types.h:31 */
@@ -1876,30 +1876,30 @@ int main(int _TIG_IZ_zj1M_formal_argc , char **_TIG_IZ_zj1M_formal_argv , char *
 typedef unsigned char __u_char;
 /* END TYPEDEF __u_char LOC=/usr/include/x86_64-linux-gnu/bits/types.h:31 */
 
+/* BEGIN ENUM _TIG_VZ_S5lt_3_main_$op LOC=UNKNOWN */
+enum _TIG_VZ_S5lt_3_main_$op {
+    _TIG_VZ_S5lt_3_main_goto$label_LAB_0 = 40,
+    _TIG_VZ_S5lt_3_main_return_int$expr_STA_0 = 254,
+    _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1 = 153,
+    _TIG_VZ_S5lt_3_main_load_int$left_STA_0$result_STA_0 = 69,
+    _TIG_VZ_S5lt_3_main_load_unsigned_long$left_STA_0$result_STA_0 = 83,
+    _TIG_VZ_S5lt_3_main_convert_char_star2char_star$left_STA_0$result_STA_0 = 225,
+    _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0 = 74,
+    _TIG_VZ_S5lt_3_main_constant_unsigned_long$result_STA_0$value_LIT_0 = 85,
+    _TIG_VZ_S5lt_3_main_store_unsigned_long$left_STA_0$right_STA_1 = 184,
+    _TIG_VZ_S5lt_3_main_string$result_STA_0$value_LIT_0 = 17,
+    _TIG_VZ_S5lt_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0 = 70,
+    _TIG_VZ_S5lt_3_main_call$func_LIT_0 = 8,
+    _TIG_VZ_S5lt_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3 = 121,
+    _TIG_VZ_S5lt_3_main_constant_int$result_STA_0$value_LIT_0 = 187,
+    _TIG_VZ_S5lt_3_main_store_char_star$right_STA_0$left_STA_1 = 49
+} ;
+/* END ENUM _TIG_VZ_S5lt_3_main_$op LOC=UNKNOWN */
+
 /* BEGIN FUNCTION-DECL-EXTERN fread LOC=/usr/include/stdio.h:675 VKEY=1299 */
 #line 675 "/usr/include/stdio.h"
 extern size_t fread(void * __restrict  __ptr , size_t __size , size_t __n , FILE * __restrict  __stream ) ;
 /* END FUNCTION-DECL-EXTERN fread LOC=/usr/include/stdio.h:675 VKEY=1299 */
-
-/* BEGIN UNION _TIG_VZ_zj1M_3_main_$node LOC=UNKNOWN CKEY=20 */
-union _TIG_VZ_zj1M_3_main_$node {
-   short _short ;
-   float _float ;
-   signed char _signed_char ;
-   char *_char_star ;
-   double _double ;
-   unsigned long _unsigned_long ;
-   char _char ;
-   unsigned char _unsigned_char ;
-   unsigned short _unsigned_short ;
-   long long _long_long ;
-   long double _long_double ;
-   int _int ;
-   long _long ;
-   unsigned long long _unsigned_long_long ;
-   unsigned int _unsigned_int ;
-};
-/* END UNION _TIG_VZ_zj1M_3_main_$node LOC=UNKNOWN CKEY=20 */
 
 /* BEGIN TYPEDEF __intmax_t LOC=/usr/include/x86_64-linux-gnu/bits/types.h:72 */
 #line 72 "/usr/include/x86_64-linux-gnu/bits/types.h"
@@ -1927,11 +1927,11 @@ extern int fgetc_unlocked(FILE *__stream ) ;
 /* END FUNCTION-DECL-EXTERN fgetc_unlocked LOC=/usr/include/stdio.h:538 VKEY=1211 */
 
 /* BEGIN FUNCTION-DEF main LOC=UNKNOWN VKEY=1454 */
-int main(int _TIG_IZ_zj1M_formal_argc , char **_TIG_IZ_zj1M_formal_argv , char **_TIG_IZ_zj1M_formal_envp ) 
+int main(int _TIG_IZ_S5lt_formal_argc , char **_TIG_IZ_S5lt_formal_argv , char **_TIG_IZ_S5lt_formal_envp ) 
 { 
-  char _TIG_VZ_zj1M_3_main_$locals[576] ;
-  unsigned char *_TIG_VZ_zj1M_3_main_$pc[1] ;
-  union _TIG_VZ_zj1M_3_main_$node *_TIG_VZ_zj1M_3_main_$sp[1] ;
+  char _TIG_VZ_S5lt_3_main_$locals[576] ;
+  unsigned char *_TIG_VZ_S5lt_3_main_$pc[1] ;
+  union _TIG_VZ_S5lt_3_main_$node *_TIG_VZ_S5lt_3_main_$sp[1] ;
   long control17 ;
   long min18 ;
   long max19 ;
@@ -1944,400 +1944,400 @@ int main(int _TIG_IZ_zj1M_formal_argc , char **_TIG_IZ_zj1M_formal_argv , char *
   {
   {
   {
-  _TIG_IZ_zj1M_argc = 0;
-  goto _TIG_IZ_zj1M_argc__INITINLINE__TIG_IZ_zj1M_argc__INIT;
+  _TIG_IZ_S5lt_argc = 0;
+  goto _TIG_IZ_S5lt_argc__INITINLINE__TIG_IZ_S5lt_argc__INIT;
   }
-  _TIG_IZ_zj1M_argc__INITINLINE__TIG_IZ_zj1M_argc__INIT: /* CIL Label */ ;
-  }
-  {
-  {
-  _TIG_IZ_zj1M_argv = (char **)0;
-  goto _TIG_IZ_zj1M_argv__INITINLINE__TIG_IZ_zj1M_argv__INIT;
-  }
-  _TIG_IZ_zj1M_argv__INITINLINE__TIG_IZ_zj1M_argv__INIT: /* CIL Label */ ;
+  _TIG_IZ_S5lt_argc__INITINLINE__TIG_IZ_S5lt_argc__INIT: /* CIL Label */ ;
   }
   {
   {
-  _TIG_IZ_zj1M_envp = (char **)0;
-  goto _TIG_IZ_zj1M_envp__INITINLINE__TIG_IZ_zj1M_envp__INIT;
+  _TIG_IZ_S5lt_argv = (char **)0;
+  goto _TIG_IZ_S5lt_argv__INITINLINE__TIG_IZ_S5lt_argv__INIT;
   }
-  _TIG_IZ_zj1M_envp__INITINLINE__TIG_IZ_zj1M_envp__INIT: /* CIL Label */ ;
-  }
-  {
-  {
-  _TIG_VZ_zj1M_3_main_$array[0][0] = _TIG_VZ_zj1M_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][1] = (unsigned char)1;
-  _TIG_VZ_zj1M_3_main_$array[0][2] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][3] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][4] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][5] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][6] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][7] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][8] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][9] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][10] = (unsigned char)24;
-  _TIG_VZ_zj1M_3_main_$array[0][11] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][12] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][13] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][14] = _TIG_VZ_zj1M_3_main_store_unsigned_long$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][15] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][16] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][17] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][18] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][19] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][20] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][21] = (unsigned char)24;
-  _TIG_VZ_zj1M_3_main_$array[0][22] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][23] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][24] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][25] = _TIG_VZ_zj1M_3_main_load_unsigned_long$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][26] = _TIG_VZ_zj1M_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][27] = _TIG_VZ_zj1M_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3;
-  _TIG_VZ_zj1M_3_main_$array[0][28] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][29] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][30] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][31] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][32] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][33] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][34] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][35] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][36] = (unsigned char)186;
-  _TIG_VZ_zj1M_3_main_$array[0][37] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][38] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][39] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][40] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][41] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][42] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][43] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][44] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][45] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][46] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][47] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][48] = (unsigned char)62;
-  _TIG_VZ_zj1M_3_main_$array[0][49] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][50] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][51] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][52] = (unsigned char)32;
-  _TIG_VZ_zj1M_3_main_$array[0][53] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][54] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][55] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][56] = (unsigned char)93;
-  _TIG_VZ_zj1M_3_main_$array[0][57] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][58] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][59] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][60] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][61] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][62] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][63] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][64] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][65] = _TIG_VZ_zj1M_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][66] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][67] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][68] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][69] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][70] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][71] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][72] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][73] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][74] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][75] = (unsigned char)24;
-  _TIG_VZ_zj1M_3_main_$array[0][76] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][77] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][78] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][79] = _TIG_VZ_zj1M_3_main_store_unsigned_long$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][80] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][81] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][82] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][83] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][84] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][85] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][86] = (unsigned char)190;
-  _TIG_VZ_zj1M_3_main_$array[0][87] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][88] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][89] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][90] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][91] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][92] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][93] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][94] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][95] = _TIG_VZ_zj1M_3_main_constant_int$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][96] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][97] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][98] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][99] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][100] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][101] = (unsigned char)32;
-  _TIG_VZ_zj1M_3_main_$array[0][102] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][103] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][104] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][105] = _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][106] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][107] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][108] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][109] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][110] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][111] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][112] = (unsigned char)128;
-  _TIG_VZ_zj1M_3_main_$array[0][113] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][114] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][115] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][116] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][117] = (unsigned char)159;
-  _TIG_VZ_zj1M_3_main_$array[0][118] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][119] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][120] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][121] = _TIG_VZ_zj1M_3_main_call$func_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][122] = (unsigned char)1;
-  _TIG_VZ_zj1M_3_main_$array[0][123] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][124] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][125] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][126] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][127] = (unsigned char)40;
-  _TIG_VZ_zj1M_3_main_$array[0][128] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][129] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][130] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][131] = _TIG_VZ_zj1M_3_main_load_int$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][132] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][133] = (unsigned char)36;
-  _TIG_VZ_zj1M_3_main_$array[0][134] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][135] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][136] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][137] = _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][138] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][139] = (unsigned char)36;
-  _TIG_VZ_zj1M_3_main_$array[0][140] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][141] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][142] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][143] = _TIG_VZ_zj1M_3_main_load_int$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][144] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][145] = (unsigned char)44;
-  _TIG_VZ_zj1M_3_main_$array[0][146] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][147] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][148] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][149] = _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][150] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][151] = (unsigned char)48;
-  _TIG_VZ_zj1M_3_main_$array[0][152] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][153] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][154] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][155] = _TIG_VZ_zj1M_3_main_string$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][156] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][157] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][158] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][159] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][160] = _TIG_VZ_zj1M_3_main_convert_char_star2char_star$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][161] = _TIG_VZ_zj1M_3_main_store_char_star$right_STA_0$left_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][162] = _TIG_VZ_zj1M_3_main_call$func_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][163] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][164] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][165] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][166] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][167] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][168] = (unsigned char)56;
-  _TIG_VZ_zj1M_3_main_$array[0][169] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][170] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][171] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][172] = _TIG_VZ_zj1M_3_main_string$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][173] = (unsigned char)24;
-  _TIG_VZ_zj1M_3_main_$array[0][174] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][175] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][176] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][177] = _TIG_VZ_zj1M_3_main_convert_char_star2char_star$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][178] = _TIG_VZ_zj1M_3_main_store_char_star$right_STA_0$left_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][179] = _TIG_VZ_zj1M_3_main_call$func_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][180] = (unsigned char)3;
-  _TIG_VZ_zj1M_3_main_$array[0][181] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][182] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][183] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][184] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][185] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][186] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][187] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][188] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][189] = _TIG_VZ_zj1M_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][190] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][191] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][192] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][193] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][194] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][195] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][196] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][197] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][198] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][199] = (unsigned char)24;
-  _TIG_VZ_zj1M_3_main_$array[0][200] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][201] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][202] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][203] = _TIG_VZ_zj1M_3_main_store_unsigned_long$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][204] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][205] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][206] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][207] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][208] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][209] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][210] = (unsigned char)66;
-  _TIG_VZ_zj1M_3_main_$array[0][211] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][212] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][213] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][214] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][215] = (unsigned char)61;
-  _TIG_VZ_zj1M_3_main_$array[0][216] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][217] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][218] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][219] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][220] = (unsigned char)56;
-  _TIG_VZ_zj1M_3_main_$array[0][221] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][222] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][223] = (unsigned char)255;
-  _TIG_VZ_zj1M_3_main_$array[0][224] = _TIG_VZ_zj1M_3_main_constant_int$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][225] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][226] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][227] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][228] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][229] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][230] = (unsigned char)32;
-  _TIG_VZ_zj1M_3_main_$array[0][231] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][232] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][233] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][234] = _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1;
-  _TIG_VZ_zj1M_3_main_$array[0][235] = _TIG_VZ_zj1M_3_main_goto$label_LAB_0;
-  _TIG_VZ_zj1M_3_main_$array[0][236] = (unsigned char)4;
-  _TIG_VZ_zj1M_3_main_$array[0][237] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][238] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][239] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][240] = _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0;
-  _TIG_VZ_zj1M_3_main_$array[0][241] = (unsigned char)32;
-  _TIG_VZ_zj1M_3_main_$array[0][242] = (unsigned char)2;
-  _TIG_VZ_zj1M_3_main_$array[0][243] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][244] = (unsigned char)0;
-  _TIG_VZ_zj1M_3_main_$array[0][245] = _TIG_VZ_zj1M_3_main_load_int$left_STA_0$result_STA_0;
-  _TIG_VZ_zj1M_3_main_$array[0][246] = _TIG_VZ_zj1M_3_main_return_int$expr_STA_0;
-  goto _TIG_VZ_zj1M_3_main_$array__INITINLINE__TIG_VZ_zj1M_3_main_$array__INIT;
-  }
-  _TIG_VZ_zj1M_3_main_$array__INITINLINE__TIG_VZ_zj1M_3_main_$array__INIT: /* CIL Label */ ;
+  _TIG_IZ_S5lt_argv__INITINLINE__TIG_IZ_S5lt_argv__INIT: /* CIL Label */ ;
   }
   {
   {
-  _TIG_VZ_zj1M_3_main_$strings = "Hello from test_hello.c\0002 + 3 = 5\000";
-  goto _TIG_VZ_zj1M_3_main_$strings__INITINLINE__TIG_VZ_zj1M_3_main_$strings__INIT;
+  _TIG_IZ_S5lt_envp = (char **)0;
+  goto _TIG_IZ_S5lt_envp__INITINLINE__TIG_IZ_S5lt_envp__INIT;
   }
-  _TIG_VZ_zj1M_3_main_$strings__INITINLINE__TIG_VZ_zj1M_3_main_$strings__INIT: /* CIL Label */ ;
+  _TIG_IZ_S5lt_envp__INITINLINE__TIG_IZ_S5lt_envp__INIT: /* CIL Label */ ;
+  }
+  {
+  {
+  _TIG_VZ_S5lt_3_main_$array[0][0] = _TIG_VZ_S5lt_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][1] = (unsigned char)1;
+  _TIG_VZ_S5lt_3_main_$array[0][2] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][3] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][4] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][5] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][6] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][7] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][8] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][9] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][10] = (unsigned char)24;
+  _TIG_VZ_S5lt_3_main_$array[0][11] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][12] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][13] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][14] = _TIG_VZ_S5lt_3_main_store_unsigned_long$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][15] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][16] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][17] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][18] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][19] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][20] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][21] = (unsigned char)24;
+  _TIG_VZ_S5lt_3_main_$array[0][22] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][23] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][24] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][25] = _TIG_VZ_S5lt_3_main_load_unsigned_long$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][26] = _TIG_VZ_S5lt_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][27] = _TIG_VZ_S5lt_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3;
+  _TIG_VZ_S5lt_3_main_$array[0][28] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][29] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][30] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][31] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][32] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][33] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][34] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][35] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][36] = (unsigned char)186;
+  _TIG_VZ_S5lt_3_main_$array[0][37] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][38] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][39] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][40] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][41] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][42] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][43] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][44] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][45] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][46] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][47] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][48] = (unsigned char)62;
+  _TIG_VZ_S5lt_3_main_$array[0][49] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][50] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][51] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][52] = (unsigned char)32;
+  _TIG_VZ_S5lt_3_main_$array[0][53] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][54] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][55] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][56] = (unsigned char)93;
+  _TIG_VZ_S5lt_3_main_$array[0][57] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][58] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][59] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][60] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][61] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][62] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][63] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][64] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][65] = _TIG_VZ_S5lt_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][66] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][67] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][68] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][69] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][70] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][71] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][72] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][73] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][74] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][75] = (unsigned char)24;
+  _TIG_VZ_S5lt_3_main_$array[0][76] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][77] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][78] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][79] = _TIG_VZ_S5lt_3_main_store_unsigned_long$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][80] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][81] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][82] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][83] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][84] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][85] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][86] = (unsigned char)190;
+  _TIG_VZ_S5lt_3_main_$array[0][87] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][88] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][89] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][90] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][91] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][92] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][93] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][94] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][95] = _TIG_VZ_S5lt_3_main_constant_int$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][96] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][97] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][98] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][99] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][100] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][101] = (unsigned char)32;
+  _TIG_VZ_S5lt_3_main_$array[0][102] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][103] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][104] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][105] = _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][106] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][107] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][108] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][109] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][110] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][111] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][112] = (unsigned char)128;
+  _TIG_VZ_S5lt_3_main_$array[0][113] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][114] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][115] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][116] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][117] = (unsigned char)159;
+  _TIG_VZ_S5lt_3_main_$array[0][118] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][119] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][120] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][121] = _TIG_VZ_S5lt_3_main_call$func_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][122] = (unsigned char)1;
+  _TIG_VZ_S5lt_3_main_$array[0][123] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][124] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][125] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][126] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][127] = (unsigned char)40;
+  _TIG_VZ_S5lt_3_main_$array[0][128] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][129] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][130] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][131] = _TIG_VZ_S5lt_3_main_load_int$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][132] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][133] = (unsigned char)36;
+  _TIG_VZ_S5lt_3_main_$array[0][134] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][135] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][136] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][137] = _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][138] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][139] = (unsigned char)36;
+  _TIG_VZ_S5lt_3_main_$array[0][140] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][141] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][142] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][143] = _TIG_VZ_S5lt_3_main_load_int$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][144] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][145] = (unsigned char)44;
+  _TIG_VZ_S5lt_3_main_$array[0][146] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][147] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][148] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][149] = _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][150] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][151] = (unsigned char)48;
+  _TIG_VZ_S5lt_3_main_$array[0][152] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][153] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][154] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][155] = _TIG_VZ_S5lt_3_main_string$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][156] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][157] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][158] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][159] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][160] = _TIG_VZ_S5lt_3_main_convert_char_star2char_star$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][161] = _TIG_VZ_S5lt_3_main_store_char_star$right_STA_0$left_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][162] = _TIG_VZ_S5lt_3_main_call$func_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][163] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][164] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][165] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][166] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][167] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][168] = (unsigned char)56;
+  _TIG_VZ_S5lt_3_main_$array[0][169] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][170] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][171] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][172] = _TIG_VZ_S5lt_3_main_string$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][173] = (unsigned char)24;
+  _TIG_VZ_S5lt_3_main_$array[0][174] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][175] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][176] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][177] = _TIG_VZ_S5lt_3_main_convert_char_star2char_star$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][178] = _TIG_VZ_S5lt_3_main_store_char_star$right_STA_0$left_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][179] = _TIG_VZ_S5lt_3_main_call$func_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][180] = (unsigned char)3;
+  _TIG_VZ_S5lt_3_main_$array[0][181] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][182] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][183] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][184] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][185] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][186] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][187] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][188] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][189] = _TIG_VZ_S5lt_3_main_constant_unsigned_long$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][190] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][191] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][192] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][193] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][194] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][195] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][196] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][197] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][198] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][199] = (unsigned char)24;
+  _TIG_VZ_S5lt_3_main_$array[0][200] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][201] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][202] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][203] = _TIG_VZ_S5lt_3_main_store_unsigned_long$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][204] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][205] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][206] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][207] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][208] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][209] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][210] = (unsigned char)66;
+  _TIG_VZ_S5lt_3_main_$array[0][211] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][212] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][213] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][214] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][215] = (unsigned char)61;
+  _TIG_VZ_S5lt_3_main_$array[0][216] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][217] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][218] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][219] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][220] = (unsigned char)56;
+  _TIG_VZ_S5lt_3_main_$array[0][221] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][222] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][223] = (unsigned char)255;
+  _TIG_VZ_S5lt_3_main_$array[0][224] = _TIG_VZ_S5lt_3_main_constant_int$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][225] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][226] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][227] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][228] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][229] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][230] = (unsigned char)32;
+  _TIG_VZ_S5lt_3_main_$array[0][231] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][232] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][233] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][234] = _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1;
+  _TIG_VZ_S5lt_3_main_$array[0][235] = _TIG_VZ_S5lt_3_main_goto$label_LAB_0;
+  _TIG_VZ_S5lt_3_main_$array[0][236] = (unsigned char)4;
+  _TIG_VZ_S5lt_3_main_$array[0][237] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][238] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][239] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][240] = _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0;
+  _TIG_VZ_S5lt_3_main_$array[0][241] = (unsigned char)32;
+  _TIG_VZ_S5lt_3_main_$array[0][242] = (unsigned char)2;
+  _TIG_VZ_S5lt_3_main_$array[0][243] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][244] = (unsigned char)0;
+  _TIG_VZ_S5lt_3_main_$array[0][245] = _TIG_VZ_S5lt_3_main_load_int$left_STA_0$result_STA_0;
+  _TIG_VZ_S5lt_3_main_$array[0][246] = _TIG_VZ_S5lt_3_main_return_int$expr_STA_0;
+  goto _TIG_VZ_S5lt_3_main_$array__INITINLINE__TIG_VZ_S5lt_3_main_$array__INIT;
+  }
+  _TIG_VZ_S5lt_3_main_$array__INITINLINE__TIG_VZ_S5lt_3_main_$array__INIT: /* CIL Label */ ;
+  }
+  {
+  {
+  _TIG_VZ_S5lt_3_main_$strings = "Hello from test_hello.c\0002 + 3 = 5\000";
+  goto _TIG_VZ_S5lt_3_main_$strings__INITINLINE__TIG_VZ_S5lt_3_main_$strings__INIT;
+  }
+  _TIG_VZ_S5lt_3_main_$strings__INITINLINE__TIG_VZ_S5lt_3_main_$strings__INIT: /* CIL Label */ ;
   }
   goto megaInitINLINE_megaInit;
   }
   megaInitINLINE_megaInit: /* CIL Label */ ;
   }
   while (1) {
-    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-zj1M--0":);
-    _TIG_IZ_zj1M_argc = _TIG_IZ_zj1M_formal_argc;
-    _TIG_IZ_zj1M_argv = _TIG_IZ_zj1M_formal_argv;
-    _TIG_IZ_zj1M_envp = _TIG_IZ_zj1M_formal_envp;
+    __asm__ volatile ("##_ANNOTATION_INITIALREGION_-TIG-IZ-S5lt--0":);
+    _TIG_IZ_S5lt_argc = _TIG_IZ_S5lt_formal_argc;
+    _TIG_IZ_S5lt_argv = _TIG_IZ_S5lt_formal_argv;
+    _TIG_IZ_S5lt_envp = _TIG_IZ_S5lt_formal_envp;
     break;
   }
-  _TIG_VZ_zj1M_3_main_$sp[0] = (*((union _TIG_VZ_zj1M_3_main_$node (*)[1][32])(_TIG_VZ_zj1M_3_main_$locals + 24)))[0];
-  _TIG_VZ_zj1M_3_main_$pc[0] = _TIG_VZ_zj1M_3_main_$array[0];
-  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 0);
-  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_zj1M_formal_argc);
-  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 16);
-  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_zj1M_formal_envp);
-  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 8);
-  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_zj1M_formal_argv);
+  _TIG_VZ_S5lt_3_main_$sp[0] = (*((union _TIG_VZ_S5lt_3_main_$node (*)[1][32])(_TIG_VZ_S5lt_3_main_$locals + 24)))[0];
+  _TIG_VZ_S5lt_3_main_$pc[0] = _TIG_VZ_S5lt_3_main_$array[0];
+  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 0);
+  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_S5lt_formal_argc);
+  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 16);
+  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_S5lt_formal_envp);
+  formalGlobalInit22 = (unsigned long *)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 8);
+  *formalGlobalInit22 = (unsigned long )(& _TIG_IZ_S5lt_formal_argv);
   while (1) {
-    switch (*(_TIG_VZ_zj1M_3_main_$pc[0])) {
-    case _TIG_VZ_zj1M_3_main_store_int$left_STA_0$right_STA_1: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    *((int *)(_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star) = (_TIG_VZ_zj1M_3_main_$sp[0] + -1)->_int;
-    _TIG_VZ_zj1M_3_main_$sp[0] += -2;
+    switch (*(_TIG_VZ_S5lt_3_main_$pc[0])) {
+    case _TIG_VZ_S5lt_3_main_store_int$left_STA_0$right_STA_1: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    *((int *)(_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star) = (_TIG_VZ_S5lt_3_main_$sp[0] + -1)->_int;
+    _TIG_VZ_S5lt_3_main_$sp[0] += -2;
     break;
-    case _TIG_VZ_zj1M_3_main_local$result_STA_0$value_LIT_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 1)->_char_star = (char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + *((int *)_TIG_VZ_zj1M_3_main_$pc[0]);
-    (_TIG_VZ_zj1M_3_main_$sp[0]) ++;
-    _TIG_VZ_zj1M_3_main_$pc[0] += 4;
+    case _TIG_VZ_S5lt_3_main_local$result_STA_0$value_LIT_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 1)->_char_star = (char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + *((int *)_TIG_VZ_S5lt_3_main_$pc[0]);
+    (_TIG_VZ_S5lt_3_main_$sp[0]) ++;
+    _TIG_VZ_S5lt_3_main_$pc[0] += 4;
     break;
-    case _TIG_VZ_zj1M_3_main_goto$label_LAB_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    _TIG_VZ_zj1M_3_main_$pc[0] += *((int *)_TIG_VZ_zj1M_3_main_$pc[0]);
+    case _TIG_VZ_S5lt_3_main_goto$label_LAB_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    _TIG_VZ_S5lt_3_main_$pc[0] += *((int *)_TIG_VZ_S5lt_3_main_$pc[0]);
     break;
-    case _TIG_VZ_zj1M_3_main_return_int$expr_STA_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    return ((_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_int);
+    case _TIG_VZ_S5lt_3_main_return_int$expr_STA_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    return ((_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_int);
     break;
-    case _TIG_VZ_zj1M_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_long = (long )(_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_unsigned_long;
+    case _TIG_VZ_S5lt_3_main_convert_unsigned_long2long$left_STA_0$result_STA_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_long = (long )(_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_unsigned_long;
     break;
-    case _TIG_VZ_zj1M_3_main_store_unsigned_long$left_STA_0$right_STA_1: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    *((unsigned long *)(_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star) = (_TIG_VZ_zj1M_3_main_$sp[0] + -1)->_unsigned_long;
-    _TIG_VZ_zj1M_3_main_$sp[0] += -2;
+    case _TIG_VZ_S5lt_3_main_store_unsigned_long$left_STA_0$right_STA_1: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    *((unsigned long *)(_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star) = (_TIG_VZ_S5lt_3_main_$sp[0] + -1)->_unsigned_long;
+    _TIG_VZ_S5lt_3_main_$sp[0] += -2;
     break;
-    case _TIG_VZ_zj1M_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    control17 = (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_long;
-    (_TIG_VZ_zj1M_3_main_$sp[0]) --;
-    min18 = *((long *)_TIG_VZ_zj1M_3_main_$pc[0]);
-    max19 = *((long *)(_TIG_VZ_zj1M_3_main_$pc[0] + 12));
-    default20 = *((int *)(_TIG_VZ_zj1M_3_main_$pc[0] + 8));
-    jumpTab21 = (unsigned char *)(_TIG_VZ_zj1M_3_main_$pc[0] + 20);
+    case _TIG_VZ_S5lt_3_main_switch$expr_STA_0$min_LIT_0$default_LAB_1$max_LIT_2$jumpTab_LABLST_3: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    control17 = (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_long;
+    (_TIG_VZ_S5lt_3_main_$sp[0]) --;
+    min18 = *((long *)_TIG_VZ_S5lt_3_main_$pc[0]);
+    max19 = *((long *)(_TIG_VZ_S5lt_3_main_$pc[0] + 12));
+    default20 = *((int *)(_TIG_VZ_S5lt_3_main_$pc[0] + 8));
+    jumpTab21 = (unsigned char *)(_TIG_VZ_S5lt_3_main_$pc[0] + 20);
     if (control17 < min18) {
-      _TIG_VZ_zj1M_3_main_$pc[0] += default20;
+      _TIG_VZ_S5lt_3_main_$pc[0] += default20;
     } else
     if (control17 > max19) {
-      _TIG_VZ_zj1M_3_main_$pc[0] += default20;
+      _TIG_VZ_S5lt_3_main_$pc[0] += default20;
     } else {
-      _TIG_VZ_zj1M_3_main_$pc[0] += *((int *)((char *)jumpTab21 + (control17 - min18) * 4));
+      _TIG_VZ_S5lt_3_main_$pc[0] += *((int *)((char *)jumpTab21 + (control17 - min18) * 4));
     }
     break;
-    case _TIG_VZ_zj1M_3_main_convert_char_star2char_star$left_STA_0$result_STA_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star = (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star;
+    case _TIG_VZ_S5lt_3_main_convert_char_star2char_star$left_STA_0$result_STA_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star = (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star;
     break;
-    case _TIG_VZ_zj1M_3_main_call$func_LIT_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    switch (*((int *)_TIG_VZ_zj1M_3_main_$pc[0])) {
+    case _TIG_VZ_S5lt_3_main_call$func_LIT_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    switch (*((int *)_TIG_VZ_S5lt_3_main_$pc[0])) {
     case 1: 
-    *((int *)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 552)) = add(2, 3);
+    *((int *)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 552)) = add(2, 3);
     break;
     case 2: 
-    puts(*((char const   **)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 560)));
+    puts(*((char const   **)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 560)));
     break;
     case 3: 
-    puts(*((char const   **)((char *)((void *)(_TIG_VZ_zj1M_3_main_$locals)) + 568)));
+    puts(*((char const   **)((char *)((void *)(_TIG_VZ_S5lt_3_main_$locals)) + 568)));
     break;
     }
-    _TIG_VZ_zj1M_3_main_$pc[0] += 4;
+    _TIG_VZ_S5lt_3_main_$pc[0] += 4;
     break;
-    case _TIG_VZ_zj1M_3_main_store_char_star$right_STA_0$left_STA_1: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    *((char **)(_TIG_VZ_zj1M_3_main_$sp[0] + -1)->_char_star) = (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star;
-    _TIG_VZ_zj1M_3_main_$sp[0] += -2;
+    case _TIG_VZ_S5lt_3_main_store_char_star$right_STA_0$left_STA_1: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    *((char **)(_TIG_VZ_S5lt_3_main_$sp[0] + -1)->_char_star) = (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star;
+    _TIG_VZ_S5lt_3_main_$sp[0] += -2;
     break;
-    case _TIG_VZ_zj1M_3_main_load_int$left_STA_0$result_STA_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star);
+    case _TIG_VZ_S5lt_3_main_load_int$left_STA_0$result_STA_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_int = *((int *)(_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star);
     break;
-    case _TIG_VZ_zj1M_3_main_load_unsigned_long$left_STA_0$result_STA_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_unsigned_long = *((unsigned long *)(_TIG_VZ_zj1M_3_main_$sp[0] + 0)->_char_star);
+    case _TIG_VZ_S5lt_3_main_load_unsigned_long$left_STA_0$result_STA_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_unsigned_long = *((unsigned long *)(_TIG_VZ_S5lt_3_main_$sp[0] + 0)->_char_star);
     break;
-    case _TIG_VZ_zj1M_3_main_constant_unsigned_long$result_STA_0$value_LIT_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 1)->_unsigned_long = *((unsigned long *)_TIG_VZ_zj1M_3_main_$pc[0]);
-    (_TIG_VZ_zj1M_3_main_$sp[0]) ++;
-    _TIG_VZ_zj1M_3_main_$pc[0] += 8;
+    case _TIG_VZ_S5lt_3_main_constant_unsigned_long$result_STA_0$value_LIT_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 1)->_unsigned_long = *((unsigned long *)_TIG_VZ_S5lt_3_main_$pc[0]);
+    (_TIG_VZ_S5lt_3_main_$sp[0]) ++;
+    _TIG_VZ_S5lt_3_main_$pc[0] += 8;
     break;
-    case _TIG_VZ_zj1M_3_main_string$result_STA_0$value_LIT_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 1)->_char_star = (char *)(_TIG_VZ_zj1M_3_main_$strings + *((int *)_TIG_VZ_zj1M_3_main_$pc[0]));
-    (_TIG_VZ_zj1M_3_main_$sp[0]) ++;
-    _TIG_VZ_zj1M_3_main_$pc[0] += 4;
+    case _TIG_VZ_S5lt_3_main_string$result_STA_0$value_LIT_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 1)->_char_star = (char *)(_TIG_VZ_S5lt_3_main_$strings + *((int *)_TIG_VZ_S5lt_3_main_$pc[0]));
+    (_TIG_VZ_S5lt_3_main_$sp[0]) ++;
+    _TIG_VZ_S5lt_3_main_$pc[0] += 4;
     break;
-    case _TIG_VZ_zj1M_3_main_constant_int$result_STA_0$value_LIT_0: 
-    (_TIG_VZ_zj1M_3_main_$pc[0]) ++;
-    (_TIG_VZ_zj1M_3_main_$sp[0] + 1)->_int = *((int *)_TIG_VZ_zj1M_3_main_$pc[0]);
-    (_TIG_VZ_zj1M_3_main_$sp[0]) ++;
-    _TIG_VZ_zj1M_3_main_$pc[0] += 4;
+    case _TIG_VZ_S5lt_3_main_constant_int$result_STA_0$value_LIT_0: 
+    (_TIG_VZ_S5lt_3_main_$pc[0]) ++;
+    (_TIG_VZ_S5lt_3_main_$sp[0] + 1)->_int = *((int *)_TIG_VZ_S5lt_3_main_$pc[0]);
+    (_TIG_VZ_S5lt_3_main_$sp[0]) ++;
+    _TIG_VZ_S5lt_3_main_$pc[0] += 4;
     break;
     }
   }
