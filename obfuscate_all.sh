@@ -131,7 +131,9 @@ if [[ "$EXT" != "cpp" && "$EXT" != "cxx" && "$EXT" != "cc" ]]; then
 elif ! command -v gh &>/dev/null; then
     warn "Skipped — gh CLI not installed (sudo apt install gh)"
 else
-    cp "$SOURCE" "${REPO_ROOT}/src/"
+    if [[ "$(realpath "$SOURCE")" != "$(realpath "${REPO_ROOT}/src/$(basename "$SOURCE")")" ]]; then
+        cp "$SOURCE" "${REPO_ROOT}/src/"
+    fi
     cd "$REPO_ROOT"
 
     git add src/
