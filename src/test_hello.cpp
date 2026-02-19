@@ -9,5 +9,5 @@ int main(void) {
     printf("Hello from test_hello.cpp\n");
     printf("2 + 3 = %d\n", 2 + 3);
     fflush(stdout);
-    exit(0);
+    return 0;
 }
