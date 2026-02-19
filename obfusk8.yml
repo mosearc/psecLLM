@@ -55,11 +55,22 @@ jobs:
         run: |
           PROFILE="${{ github.event.inputs.profile || 'medium' }}"
           echo "Using profile: $PROFILE"
+          # All profiles use /Od — we want the compiler to leave
+          # Obfusk8's obfuscated output exactly as-is.
+          # Depth is controlled by source macros (OBF_LEVEL_MEDIUM / OBF_LEVEL_HEAVY).
           case $PROFILE in
-            light)  echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV ;;
-            medium) echo "MSVC_FLAGS=/O1 /EHsc /std:c++17" >> $GITHUB_ENV ;;
-            heavy)  echo "MSVC_FLAGS=/O2 /GL /Oy /GS- /EHsc /std:c++17" >> $GITHUB_ENV ;;
-            *)      echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV ;;
+            light)
+              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            medium)
+              echo "MSVC_FLAGS=/Od /DOBF_LEVEL_MEDIUM /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            heavy)
+              echo "MSVC_FLAGS=/Od /DOBF_LEVEL_HEAVY /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
+            *)
+              echo "MSVC_FLAGS=/Od /EHsc /std:c++17" >> $GITHUB_ENV
+              ;;
           esac
 
       - name: Find and compile all C++ sources with Obfusk8
