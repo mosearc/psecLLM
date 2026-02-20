@@ -1,0 +1,7 @@
+.git
+obfuscated/
+*.exe
+*.o
+*.bc
+__pycache__
+*.pyc
