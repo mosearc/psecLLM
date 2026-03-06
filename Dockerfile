@@ -6,18 +6,12 @@ LABEL description="psecLLM obfuscation pipeline: Tigress + Movfuscator + CObfusc
 
 # ── System packages ───────────────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y \
-    # build essentials
     git wget curl gnupg cmake ninja-build \
     build-essential gcc g++ nasm \
-    # 32-bit support for Movfuscator
     gcc-multilib \
-    # Movfuscator runtime deps
-    libc6-dev-i386 libgcc-s1:i386 \
-    # Python
+    libc6-dev-i386 \
     python3 python3-pip python3.11-dev \
-    # GCC plugin support for Kovid
     gcc-12-plugin-dev g++-12 \
-    # misc
     pkg-config libssl-dev zlib1g-dev libgc-dev \
     libcjson-dev libunwind-dev \
     && rm -rf /var/lib/apt/lists/*
@@ -71,11 +65,11 @@ RUN git clone https://github.com/djolertrk/kovid-obfuscation-passes.git /tmp/kov
 
 # ── Tigress ───────────────────────────────────────────────────────────────────
 # Tigress cannot be downloaded automatically (requires license registration).
-# Copy your local install into the image at build time.
-# Run: docker build --build-arg TIGRESS_SRC=/usr/local/bin/tigress ...
-# Or just COPY if tigress is in the build context.
-COPY tigress/ /usr/local/bin/tigress/
-ENV TIGRESS_HOME=/usr/local/bin/tigress
+# docker-build.sh copies the real package directory into tigress/ in the
+# build context before running docker build, then deletes it after.
+COPY tigress/ /usr/local/bin/tigresspkg/4.0.11/
+RUN ln -sf /usr/local/bin/tigresspkg/4.0.11/tigress /usr/local/bin/tigress
+ENV TIGRESS_HOME=/usr/local/bin/tigresspkg/4.0.11
 ENV PATH="${TIGRESS_HOME}:${PATH}"
 
 # ── GitHub CLI ────────────────────────────────────────────────────────────────
