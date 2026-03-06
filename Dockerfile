@@ -39,12 +39,20 @@ RUN mkdir -p /etc/apt/keyrings \
 RUN pip3 install lit --break-system-packages \
     && ln -sf /root/.local/bin/lit /usr/bin/llvm-lit
 
-# ── Movfuscator ───────────────────────────────────────────────────────────────
-RUN git clone https://github.com/xoreaxeaxeax/movfuscator.git /tmp/movfuscator \
-    && cd /tmp/movfuscator \
-    && ./build.sh \
-    && ./install.sh \
-    && rm -rf /tmp/movfuscator
+# ── Movfuscator dependencies ─────────────────────────────────────────────────
+RUN apt-get update && apt-get install -y         gcc-multilib libc6-dev-i386 lib32gcc-s1     && rm -rf /var/lib/apt/lists/*
+
+# ── Movfuscator clone ─────────────────────────────────────────────────────────
+RUN git clone https://github.com/xoreaxeaxeax/movfuscator.git /tmp/movfuscator
+
+# ── Movfuscator build ─────────────────────────────────────────────────────────
+RUN cd /tmp/movfuscator && ./build.sh
+
+# ── Movfuscator install ───────────────────────────────────────────────────────
+RUN cd /tmp/movfuscator && ./install.sh
+
+# ── Movfuscator verify ────────────────────────────────────────────────────────
+RUN which movcc && rm -rf /tmp/movfuscator
 
 # ── CObfuscator ───────────────────────────────────────────────────────────────
 RUN git clone https://github.com/AleksaZatezalo/CObfuscator.git /opt/CObfuscator

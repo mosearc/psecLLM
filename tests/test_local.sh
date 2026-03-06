@@ -138,6 +138,10 @@ if ! command -v movcc &>/dev/null; then
     skip "movcc not found in PATH (movfuscator not installed)"
 else
     echo -e "${CYAN}Movfuscator flags: $MOVCC_FLAGS${RESET}"
+    if grep -qE 'float|double' src/test_hello.c; then
+        skip "Movfuscator: source contains floating point — not supported"
+        continue 2>/dev/null || true
+    fi
     echo "→ Compiling src/test_hello.c with movcc..."
     if movcc $MOVCC_FLAGS -o obfuscated/test_hello_movfuscated src/test_hello.c 2>&1; then
         echo "→ Running binary (movfuscated binaries are slow, please wait)..."
@@ -158,14 +162,22 @@ fi
 header "3/4 — COBFUSCATOR"
 # ─────────────────────────────────────────
 
-if ! python3 -c "import sys, os; sys.path.insert(0, os.path.expanduser('~/tools/CObfuscator')); import CObfuscator" 2>/dev/null; then
-    skip "CObfuscator not found — run: git clone https://github.com/AleksaZatezalo/CObfuscator.git ~/tools/CObfuscator"
+if ! python3 -c "
+import sys, os
+for p in ['/opt/CObfuscator', os.path.expanduser('~/tools/CObfuscator')]:
+    if os.path.isdir(p):
+        sys.path.insert(0, p)
+        break
+import CObfuscator
+" 2>/dev/null; then
+    skip "CObfuscator not found at /opt/CObfuscator or ~/tools/CObfuscator"
 else
     echo "→ Obfuscating src/test_hello.c with CObfuscator..."
     if python3 tools/cobfuscator_run.py \
         src/test_hello.c \
         obfuscated/test_hello_cobfuscated.c 2>&1; then
 
+        python3 tools/cobfuscator_sanitize.py obfuscated/test_hello_cobfuscated.c
         echo "→ Compiling obfuscated output..."
         if gcc -o obfuscated/test_hello_cobfuscated obfuscated/test_hello_cobfuscated.c 2>&1; then
             echo "→ Running binary..."

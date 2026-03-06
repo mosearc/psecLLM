@@ -150,6 +150,10 @@ if [[ "$EXT" != "c" ]]; then
     warn "Skipped — C files only"
 elif ! command -v movcc &>/dev/null; then
     warn "Skipped — movcc not found in PATH"
+elif grep -qE 'float|double' "$SOURCE"; then
+    warn "Skipped — Movfuscator does not support floating point types"
+elif grep -qP 'for\s*\(\s*int\s' "$SOURCE"; then
+    warn "Skipped — Movfuscator requires C89 style: declare variables before for loop (for (int i) not supported)"
 else
     echo -e "  flags: ${CYAN}$MOVCC_FLAGS${RESET}"
     movcc $MOVCC_FLAGS -o "${REPO_ROOT}/obfuscated/${NAME}_movfuscated" "$SOURCE"
@@ -161,11 +165,21 @@ echo ""
 echo "[3/5] CObfuscator"
 if [[ "$EXT" != "c" ]]; then
     warn "Skipped — C files only"
-elif ! python3 -c "import sys, os; sys.path.insert(0, os.path.expanduser('~/tools/CObfuscator')); import CObfuscator" 2>/dev/null; then
-    warn "Skipped — CObfuscator not found (git clone https://github.com/AleksaZatezalo/CObfuscator.git ~/tools/CObfuscator)"
+elif ! python3 -c "
+import sys, os
+for p in ['/opt/CObfuscator', os.path.expanduser('~/tools/CObfuscator')]:
+    if os.path.isdir(p):
+        sys.path.insert(0, p)
+        break
+import CObfuscator
+" 2>/dev/null; then
+    warn "Skipped — CObfuscator not found at /opt/CObfuscator or ~/tools/CObfuscator"
 else
-    python3 "${REPO_ROOT}/tools/cobfuscator_run.py" \
+    COBFUSCATOR_PATH=$(python3 -c "import os; print('/opt/CObfuscator' if os.path.isdir('/opt/CObfuscator') else os.path.expanduser('~/tools/CObfuscator'))")
+    COBFUSCATOR_PATH="$COBFUSCATOR_PATH" python3 "${REPO_ROOT}/tools/cobfuscator_run.py" \
         "$SOURCE" \
+        "${REPO_ROOT}/obfuscated/${NAME}_cobfuscated.c"
+    python3 "${REPO_ROOT}/tools/cobfuscator_sanitize.py" \
         "${REPO_ROOT}/obfuscated/${NAME}_cobfuscated.c"
     gcc -o "${REPO_ROOT}/obfuscated/${NAME}_cobfuscated" \
            "${REPO_ROOT}/obfuscated/${NAME}_cobfuscated.c"

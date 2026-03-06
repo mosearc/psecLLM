@@ -5,11 +5,22 @@
 import sys
 import os
 
-# Add CObfuscator repo to path
-COBFUSCATOR_PATH = os.path.expanduser("~/tools/CObfuscator")
+# Resolve CObfuscator path — check container path first, then host path
+# Can also be overridden via COBFUSCATOR_PATH env var
+COBFUSCATOR_PATH = (
+    os.environ.get("COBFUSCATOR_PATH") or
+    ("/opt/CObfuscator" if os.path.isdir("/opt/CObfuscator") else
+     os.path.expanduser("~/tools/CObfuscator"))
+)
+
 sys.path.insert(0, COBFUSCATOR_PATH)
 
-from CObfuscator import CObfuscator
+try:
+    from CObfuscator import CObfuscator
+except ImportError:
+    print(f"Error: CObfuscator not found at {COBFUSCATOR_PATH}")
+    print("  Install with: git clone https://github.com/AleksaZatezalo/CObfuscator.git ~/tools/CObfuscator")
+    sys.exit(1)
 
 if len(sys.argv) != 3:
     print("Usage: cobfuscator_run.py <input.c> <output.c>")
